@@ -79,9 +79,11 @@
 											<% if IsCurrentStep(billingaddress) %>
 												$OrderForm
 											<% else %>
-												<% with Cart %>
+												<% if BillingAddress %>
 													$BillingAddress
-												<% end_with %>
+												<% else %>
+													$ShippingAddress
+												<% end_if %>
 											<% end_if %>
 										</div>
 									</div>
